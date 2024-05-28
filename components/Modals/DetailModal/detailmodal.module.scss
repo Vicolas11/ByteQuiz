@@ -1,0 +1,59 @@
+.modal {
+  @apply w-[90%] md:w-[50%] lg:w-[40%];
+
+  .loading {
+    @apply text-center;
+  }
+
+  .container {
+    .btnGroup {
+      @apply absolute top-3 left-3;
+      @apply flex items-center gap-x-2;
+
+      svg {
+        @apply cursor-pointer text-gray-400;
+      }
+
+      svg:first-child {
+        @apply hover:text-blue-600;
+      }
+
+      svg:last-child {
+        @apply hover:text-red-500;
+      }
+    }
+
+    h4 {
+      @apply text-btnHoverColor1 font-bold text-xl text-center mb-2;
+    }
+
+    .notFound {
+      @apply text-center font-medium text-gray-400;
+    }
+
+    .scroll {
+      @apply max-h-[20rem] overflow-auto;
+      scrollbar-width: thin;
+
+      .imgCover {
+        @apply w-full h-52 rounded-xl mb-2 relative;
+
+        img {
+          @apply object-cover rounded-xl;
+        }
+      }
+
+      p {
+        @apply text-base;
+      }
+    }
+
+    .btn_wrapper {
+      @apply flex justify-center my-2;
+
+      .btn {
+        @apply hover:bg-prmColor hover:text-orange-100 py-1 px-3;
+      }
+    }
+  }
+}

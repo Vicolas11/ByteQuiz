@@ -1,0 +1,39 @@
+.container {
+  @apply fixed w-full h-screen overflow-auto bg-white z-[60] inset-0;
+
+  .headerImg {
+    @apply relative border w-full h-[350px] bg-black;
+
+    img {
+      @apply object-cover w-full h-full;
+    }
+
+    .title {
+      @apply absolute top-1/2 mx-auto inset-x-0 translate-y-[-50%] text-white text-center z-20 font-bold text-4xl;
+    }
+
+    .medalImg {
+      @apply w-32 h-32 p-2 rounded-full absolute bottom-[-20%] mx-auto inset-x-0 z-[10] border shadow-md bg-gray-100;
+
+      img {
+        @apply object-contain;
+      }
+    }
+
+    .overlay {
+      @apply absolute w-full h-full bg-[rgba(0,0,0,.7)] top-0 left-0;
+    }
+  }
+
+  .body {
+    @apply text-btnHoverColor1 flex flex-col justify-center items-center gap-y-2 mt-24 text-base text-center px-6 pb-6;
+
+    .congrat {
+      @apply text-lg font-bold my-1 mx-auto md:w-1/2;
+    }
+
+    .doneBtn {
+      @apply text-orange-100 py-1 px-4 hover:bg-prmColor hover:text-orange-100 mt-2;
+    }
+  }
+}

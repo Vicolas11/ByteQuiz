@@ -1,0 +1,28 @@
+.profileContainer {
+  @apply flex gap-x-2 items-center text-gray-500 hover:text-gray-500;
+  @apply cursor-pointer md:cursor-default;
+
+  .username {
+    @apply text-right;
+
+    h4 {
+      @apply m-0 text-base font-semibold;
+    }
+
+    p {
+      @apply text-xs mt-[-3px] text-gray-500 font-medium;
+    }
+  }
+
+  .avatar {
+    @apply flex items-center;
+
+    img {
+      @apply rounded-full;
+    }
+  }
+
+  .avatar svg:last-child {
+    @apply hover:text-gray-600 ml-[-3px] md:hidden;
+  }
+}

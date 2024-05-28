@@ -1,0 +1,50 @@
+.container {
+  @apply mb-6 mt-10 mx-auto w-full sm:rounded-lg shadow-md border border-gray-100;
+  @apply rounded-md bg-white px-6 md:px-12 py-5 relative;
+
+  .title {
+    @apply font-semibold text-gray-500;
+  }
+
+  .userInfo {
+    @apply flex flex-col md:flex-row justify-between gap-6 flex-wrap mt-2;
+
+    li {
+      @apply md:w-[45%];
+
+      label {
+        @apply text-gray-400 text-base;
+      }
+    }
+  }
+
+  .btnContainer {
+    @apply flex justify-center;
+
+    .btn {
+      @apply py-2 px-4 my-5 text-sm;
+    }
+  }
+
+  .achievement {
+    ul {
+      @apply flex overflow-x-auto gap-x-3 gap-y-1 mt-3;
+
+      li {
+        @apply flex flex-col items-center;
+
+        .medalImgContainer {
+          @apply relative w-32 h-32 p-2 rounded-md;
+
+          img {
+            @apply object-cover;
+          }
+        }
+
+        h3 {
+          @apply font-medium text-center text-sm mt-1 text-gray-500;
+        }
+      }
+    }
+  }
+}

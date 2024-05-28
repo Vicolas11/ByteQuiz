@@ -1,0 +1,17 @@
+.modal {
+  @apply w-[90%] md:w-[60%] lg:w-1/2 xl:w-[40%] 2xl:w-[30%];
+
+  .container {
+    p {
+      @apply text-base mt-6 text-center;
+    }
+
+    .btn_wrapper {
+      @apply flex justify-center mt-3 mb-1 gap-x-3;
+
+      .btn {
+        @apply hover:bg-prmColor hover:text-orange-100 py-1 px-3;
+      }
+    }
+  }
+}

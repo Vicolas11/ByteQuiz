@@ -1,0 +1,8 @@
+.button {
+  @apply flex items-center gap-x-1 justify-center;
+  @apply rounded-lg bg-gray-800 py-2 px-6;
+  @apply hover:bg-prmColor;
+  @apply text-orange-50 font-medium;
+  @apply disabled:bg-gray-300 disabled:cursor-not-allowed;
+  transition: all .5s;
+}

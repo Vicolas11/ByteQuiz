@@ -1,0 +1,21 @@
+.modal {
+  @apply w-[30%];
+
+  .container {
+    h4 {
+      @apply text-btnHoverColor1 font-bold text-xl text-center mb-2;
+    }
+
+    p {
+      @apply text-base;
+    }
+
+    .btn_wrapper {
+      @apply flex justify-center mt-3 mb-1 gap-x-2;
+
+      .btn {
+        @apply hover:bg-prmColor hover:text-orange-100 py-1 px-3;
+      }
+    }
+  }
+}

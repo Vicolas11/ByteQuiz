@@ -1,0 +1,15 @@
+.container {
+  @apply rotate-0;
+
+  .circle_1 {
+    @apply text-gray-300;
+  }
+
+  .circle_2 {
+    @apply text-prmColor transition-all duration-300 ease-in-out;
+  }
+
+  .text {
+    @apply text-base font-semibold;
+  }
+}

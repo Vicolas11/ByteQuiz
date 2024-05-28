@@ -1,0 +1,29 @@
+.content {
+  @apply px-3 w-full lg:w-full mt-5 mb-6 mx-auto;
+  @apply relative sm:rounded-lg shadow-md;
+  @apply rounded-md bg-white border border-gray-100;
+
+  .header {
+    @apply flex flex-wrap gap-y-2 md:gap-y-0 justify-between items-center md:pr-5 pt-6;
+
+    .title {
+      @apply flex items-center font-semibold text-lg text-gray-600;
+
+      .btnBack {
+        @apply mr-2 text-xl cursor-pointer text-gray-400 hover:text-gray-600;
+      }
+    }
+  }
+}
+
+.userProfile {
+  @apply flex gap-x-2 items-center text-gray-500;
+
+  .imgProfile {
+    @apply relative w-8 h-8 rounded-full mr-1 flex items-center;
+
+    img {
+      @apply object-cover rounded-full;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.form {
+  @apply mx-auto w-[90%] md:w-[60%] lg:w-5/12 bg-white px-4 py-6;
+  @apply flex flex-col gap-y-4 shadow-md;
+  box-shadow: 1px 1px 10px rgba(#000000, .1);
+
+  .title {
+    @apply text-gray-800 font-bold text-xl text-center mb-[-8px];
+  }
+
+  .lineContainer {
+    @apply text-center w-full relative;
+
+    h3 {
+      @apply font-bold text-gray-400;
+      @apply before:border-t before:flex before:absolute before:border-gray-400;
+      @apply before:w-[45%] before:translate-y-[-50%] before:top-1/2 before:px-5;
+      @apply after:border-t after:flex after:absolute after:border-gray-400;
+      @apply after:w-[45%] after:translate-y-[-50%] after:top-1/2 after:right-0;
+    }
+  }
+
+  .gbtn {
+    @apply bg-green-900 text-green-100;
+    @apply hover:bg-green-700;
+    transition: all 0.9s;
+  }
+
+  .fbtn {
+    @apply bg-blue-900 hover:bg-blue-700 text-blue-100;
+    transition: all 0.9s;
+  }
+
+  p {
+    @apply text-gray-400 font-medium text-base text-center;
+
+    button {
+      @apply font-extrabold text-gray-500 hover:text-gray-600;
+    }
+  }
+}

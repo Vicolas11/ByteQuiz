@@ -1,0 +1,11 @@
+.backdrop {
+  @apply fixed w-full h-full bg-[rgba(0,0,0,.7)] z-[60] overflow-auto flex justify-center items-center inset-0;
+
+  .modal {
+    @apply relative bg-gray-50 rounded-xl p-3;
+
+    .closeBtn {
+      @apply absolute top-3 right-2 cursor-pointer hover:text-prmColor;
+    }
+  }
+}

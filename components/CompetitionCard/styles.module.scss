@@ -1,0 +1,51 @@
+.card {
+  @apply w-full md:w-[48%] xl:w-[32%] rounded-2xl text-btnHoverColor1 h-60 border-2 border-gray-200;
+  @apply cursor-pointer hover:scale-105 duration-500 transition-transform z-0;
+  @apply bg-white relative;
+
+  .imgCover {
+    @apply w-full h-[30%] xl:h-[25%] relative;
+
+    img {
+      @apply object-cover rounded-tl-2xl rounded-tr-2xl;
+    }
+  }
+
+  .body {
+    @apply px-3 py-2 h-[35%] xl:h-[45%] overflow-y-auto mt-1 mb-2;
+
+    .title {
+      @apply my-1 font-semibold text-base;
+    }
+
+    .subTitle {
+      @apply leading-tight text-gray-400 text-sm;
+    }
+
+    .users {
+      @apply pt-2 text-xs;
+    }
+  }
+
+  .footer {
+    @apply flex flex-wrap justify-between items-center border-t border-gray-400;
+    @apply py-2 px-3 absolute bottom-0 left-0 w-full inset-x-0;
+
+    .users {
+      @apply text-xs;
+    }
+
+    div {
+      @apply flex flex-wrap justify-between absolute left-0 top-[-65%] w-full px-2;
+      @apply text-gray-400;
+    }
+
+    .price {
+      @apply font-bold text-sm;
+    }
+
+    .time {
+      @apply text-xs;
+    }
+  }
+}

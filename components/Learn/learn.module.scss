@@ -1,0 +1,66 @@
+.container {
+  @apply lg:w-9/12 mx-auto mt-10;
+
+  .header {
+    @apply text-center;
+    h4 {
+      @apply font-black text-lg text-center;
+    }
+  }
+
+  .list {
+    @apply my-2;
+
+    li {
+      @apply shadow-md;
+
+      .title {
+        @apply flex justify-between items-center py-2 px-4 cursor-pointer;
+        @apply text-orange-100 font-medium text-base bg-btnHoverColor1;
+        @apply border-b border-orange-100 hover:bg-blue-800;
+        transition: background 0.5s;
+
+        svg {
+          @apply text-3xl;
+        }
+      }
+
+      .content {
+        @apply bg-orange-50 text-btnColor1 p-4;
+
+        p {
+          @apply mb-4;
+        }
+
+        .btnQuiz {
+          @apply font-medium py-2 px-3 bg-btnHoverColor1 hover:bg-blue-800;
+          @apply text-orange-100 text-sm hover:text-blue-100;
+        }
+      }
+
+      .active {
+        @apply bg-blue-800 hover:bg-blue-700 text-blue-50;
+      }
+    }
+  }
+
+  .list > li:first-child {
+    .title {
+      @apply rounded-tl-2xl rounded-tr-2xl;
+    }
+  }
+
+  .list > li:last-child {
+    .title {
+      @apply rounded-br-2xl rounded-bl-2xl border-b-[0px];
+    }
+
+    .active_lst {
+      @apply rounded-none;
+    }
+
+    .content {
+      @apply rounded-br-2xl rounded-bl-2xl;
+    }
+  }
+}

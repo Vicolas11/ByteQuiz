@@ -1,0 +1,21 @@
+.modal {
+  @apply w-[90%] md:w-[60%] xl:w-[30%];
+
+  .container {
+    h4 {
+      @apply text-btnHoverColor1 font-bold text-xl text-center mb-2 px-3;
+    }
+
+    p {
+      @apply text-base;
+    }
+
+    .btnWrapper {
+      @apply flex justify-center mt-3 mb-1;
+
+      button {
+        @apply py-1 px-3 text-sm;
+      }
+    }
+  }
+}
