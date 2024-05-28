@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.loader {
+  @apply fixed top-0 left-0 bg-[rgba(0,0,0,.2)];
+  @apply flex justify-center items-center w-full h-full z-[200];
+}
+
+.errContent {
+  @apply flex justify-center items-center text-center flex-col;
+  @apply h-screen w-full;
+
+  h1 {
+    @apply text-4xl font-black;
+  }
+
+  p {
+    @apply text-gray-500 mb-3;
+  }
+}

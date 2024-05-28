@@ -1,0 +1,41 @@
+.home {
+  @apply bg-gray-50 text-btnHoverColor1;
+
+  .main {
+    @apply flex flex-col justify-between min-h-screen xl:w-9/12 2xl:w-[60%] mx-auto;
+
+    .mainContainer {
+      @apply flex text-gray-800 mt-10;
+
+      .txtContainer {
+        @apply flex-1 text-center lg:text-left px-5 lg:px-0;
+
+        h1 {
+          @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+        }
+
+        p {
+          @apply text-base md:text-lg mt-6 lg:mt-4 lg:leading-none md:px-7 lg:px-0;
+        }
+
+        .btnContainer {
+          @apply flex flex-wrap gap-y-2 gap-x-5 mt-4 justify-center lg:justify-start;
+
+          button {
+            @apply px-3 py-2 md:px-4 text-sm lg:py-[7px];
+          }
+
+          .btn {
+            @apply border-2 border-prmColor text-prmColor bg-transparent;
+            @apply hover:bg-prmColor hover:text-white;
+            transition: 0.5s;
+          }
+        }
+      }
+
+      .imgContainer {
+        @apply hidden lg:block flex-1 relative;
+      }
+    }
+  }
+}

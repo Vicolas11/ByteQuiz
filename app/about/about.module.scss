@@ -1,0 +1,53 @@
+.container {
+  @apply flex mt-16 md:mt-12;
+
+  .txtContainer {
+    @apply flex-1 text-center lg:text-left px-5 xl:px-0 lg:mx-2 xl:mx-0;
+
+    h3 {
+      @apply text-gray-600 mb-4 font-bold text-lg;
+    }
+
+    h1 {
+      @apply text-3xl font-extrabold text-gray-800;
+    }
+
+    p {
+      @apply text-sm md:text-lg mt-6 lg:mt-4 lg:leading-none md:px-7 lg:px-0;
+      @apply text-gray-600;
+    }
+
+    .btnContainer {
+      @apply flex flex-wrap gap-y-2 gap-x-5 mt-4 justify-center lg:justify-start;
+
+      button {
+        @apply px-3 py-2 md:px-4 text-sm lg:py-[7px];
+      }
+
+      .btn {
+        @apply bg-white text-prmColor;
+        @apply hover:bg-btnHoverColor1;
+        transition: 0.5s;
+      }
+    }
+
+    .stats {
+      @apply flex justify-between mt-4 w-11/12 mx-auto lg:mx-0;
+
+      .row {
+        h4,
+        p {
+          @apply m-0 font-semibold;
+        }
+
+        h4 {
+          @apply font-black text-2xl text-prmColor;
+        }
+      }
+    }
+  }
+
+  .imgContainer {
+    @apply hidden lg:block flex-1 relative ml-3;
+  }
+}

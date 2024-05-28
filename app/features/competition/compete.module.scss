@@ -1,0 +1,29 @@
+.container {
+  @apply px-5 xl:px-0 flex-1 pt-12;
+
+  .content {
+    @apply mb-6 mt-12 mx-auto w-full sm:rounded-lg shadow-md border border-gray-100;
+    @apply rounded-md bg-white px-6 xl:px-12 py-5 relative;
+
+    .loading {
+      @apply text-center;
+    }
+
+    .header {
+      @apply text-center my-3;
+
+      h4 {
+        @apply font-black text-lg text-center;
+      }
+    }
+
+    .list {
+      @apply flex flex-wrap md:gap-x-1 xl:gap-x-4 gap-y-4 xl:ml-2;
+      @apply justify-between xl:justify-normal;
+    }
+
+    .notFound {
+      @apply text-center text-prmColor font-semibold;
+    }
+  }
+}

@@ -1,0 +1,131 @@
+.container {
+  @apply mx-4 xl:mx-auto flex-1 mt-20;
+
+  .content {
+    @apply relative xl:w-full bg-white rounded-md shadow-md px-6 py-2;
+
+    textarea {
+      @apply rounded-lg bg-white ring-1 focus:outline-1 focus:outline-prmColor p-2;
+      @apply hover:ring-prmColor ring-gray-400 w-full h-full;
+      @apply disabled:hover:ring-gray-400 disabled:cursor-not-allowed;
+    }
+
+    .header {
+      @apply flex flex-col md:pr-5 pt-6;
+
+      p {
+        @apply font-medium text-sm ml-7 text-gray-500;
+      }
+
+      .title {
+        @apply flex items-center font-semibold text-lg text-gray-600;
+
+        .btnBack {
+          @apply mr-2 text-xl cursor-pointer text-gray-400 hover:text-gray-600;
+        }
+      }
+
+      .key {
+        @apply flex gap-x-4 ml-7 mt-1;
+
+        span {
+          @apply flex gap-x-2 text-sm items-center font-semibold;
+        }
+
+        .isCorrect {
+          @apply text-green-600;
+        }
+
+        .isSelect {
+          @apply text-red-600;
+        }
+      }
+    }
+
+    .questionList {
+      @apply flex mt-3 py-2 gap-8 flex-wrap;
+
+      li {
+        @apply w-full md:w-[47%] lg:w-[48%];
+
+        .txtAreaQuest {
+          @apply flex gap-x-2;
+
+          h2 {
+            @apply pt-2;
+          }
+        }
+
+        .points {
+          @apply mt-2 font-semibold;
+        }
+
+        .optList {
+          @apply flex flex-col gap-y-2 mt-2;
+
+          li {
+            @apply flex gap-x-2 gap-y-2 w-full;
+
+            .btnOpt.isCorrect {
+              @apply bg-green-600 border-green-600 text-green-50;
+              @apply disabled:hover:bg-green-600 disabled:hover:text-green-50;
+            }
+
+            .btnOpt.selected {
+              @apply bg-red-600 border-red-600 text-red-50;
+              @apply disabled:hover:bg-red-600 disabled:hover:text-red-50;
+            }
+
+            .input.isCorrectInput {
+              @apply ring-green-600 ring-2 hover:ring-green-600;
+            }
+
+            .input.selectedInput {
+              @apply ring-red-600 ring-2 hover:ring-red-600;
+            }
+
+            .btnOpt {
+              @apply border border-gray-400 rounded-md px-4 py-1 font-bold;
+              @apply hover:bg-orange-100 hover:text-btnHoverColor1 hover:border-prmColor;
+              @apply disabled:cursor-not-allowed disabled:hover:bg-transparent;
+              @apply disabled:hover:bg-gray-200 disabled:hover:border-gray-400;
+            }
+          }
+        }
+
+        .time_score {
+          @apply flex gap-x-2 mt-4 w-full items-end;
+
+          .score,
+          .time {
+            @apply w-full;
+          }
+
+          input {
+            @apply mt-1;
+          }
+
+          .btn_group {
+            @apply flex gap-x-1;
+
+            .btn {
+              @apply px-3 text-sm;
+            }
+          }
+
+          .btn_group > .btn:last-child {
+            @apply bg-red-600 hover:bg-red-700;
+          }
+
+          .btn_group > .btn:nth-child(2) {
+            @apply bg-blue-600 hover:bg-blue-700;
+          }
+
+          .btn_group > .btn:nth-child(1) {
+            @apply bg-green-600 hover:bg-green-700;
+          }
+        }
+      }
+    }
+  }
+}

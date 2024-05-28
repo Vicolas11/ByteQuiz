@@ -1,0 +1,12 @@
+.container {
+  @apply flex flex-col lg:flex-row justify-between items-center;
+  @apply px-3 md:px-5 lg:px-0 mt-12;
+
+  .left {
+    @apply hidden lg:block flex-1;
+
+    .imgContainer {
+      @apply relative h-[23rem];
+    }
+  }
+}

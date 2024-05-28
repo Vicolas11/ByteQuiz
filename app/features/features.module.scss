@@ -1,0 +1,41 @@
+.container {
+  @apply mt-12 md:mt-20 xl:mt-12;
+
+  .cardWrapper {
+    @apply flex flex-wrap justify-evenly gap-y-3 gap-x-1 mt-8 xl:mt-0 mb-3 md:my-0 px-5 xl:px-0 ;
+
+    .card {
+      @apply flex items-center md:w-[48%] lg:w-[31%] bg-white py-3 px-3 text-center rounded-xl;
+      @apply flex-col cursor-pointer h-[14.5rem] pt-8 border-2 border-gray-50;
+      @apply hover:bg-prmColor hover:text-orange-100 hover:border-2 hover:border-white;
+      box-shadow: 0.5px 0.5px 12px rgba($color: #000000, $alpha: 0.1);
+      transition: all 0.4s;
+
+      svg {
+        @apply text-gray-800 text-6xl m-[-2px];
+      }
+
+      h4 {
+        @apply font-bold text-xl mb-2 mt-1 text-gray-800;
+      }
+
+      p {
+        @apply leading-normal h-40 overflow-auto text-gray-500 text-[13px];
+        scrollbar-color: #1b1e24 transparent;
+        scrollbar-width: thin;
+      }
+    }
+
+    .card:hover > svg {
+      @apply text-orange-100;
+    }
+
+    .card:hover > h4 {
+      @apply text-orange-100;
+    }
+
+    .card:hover > p {
+      @apply text-orange-100;
+    }
+  }
+}
