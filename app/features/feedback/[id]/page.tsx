@@ -66,13 +66,14 @@ const FeedbackDetail = async ({ params }: Params) => {
                         >
                           {itm.label}
                         </button>
-                        <CustomInput
-                          disabled
+                        <textarea
+                          rows={1}
                           id={`${idx}`}
                           name="options"
+                          disabled
                           value={data.options[idx].value}
                           placeholder="Option"
-                          xtraStyle={`${styles.input} ${
+                          className={`${styles.input} ${
                             data.options[idx].isCorrect
                               ? styles.isCorrectInput
                               : ""
@@ -83,7 +84,7 @@ const FeedbackDetail = async ({ params }: Params) => {
                               ? styles.selectedInput
                               : ""
                           }`}
-                        />
+                        ></textarea>
                       </li>
                     ))}
                   </ul>

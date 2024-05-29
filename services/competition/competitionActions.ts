@@ -33,7 +33,7 @@ export async function createCompetitionAction(_: any, formData: FormData) {
     redirect("/login");
   }
 
-  if (respData?.error || !respData?.status) {
+  if (respData?.errors || !respData?.status) {
     return {
       data: {
         ...respData,
@@ -70,12 +70,12 @@ export async function deleteCompetitionAction(_: any, formData: FormData) {
       data: {
         ...respData,
         code: respData.code,
-        message: "Ops! Something went wrong. Please try again.",
+        message: respData.message || "Ops! Something went wrong. Please try again.",
       },
     };
   }
 
-  if (respData?.error || !respData?.status) {
+  if (respData?.errors || !respData?.status) {
     return {
       data: {
         ...respData,
@@ -112,12 +112,12 @@ export async function updateCompetitionAction(_: any, formData: FormData) {
       data: {
         ...respData,
         code: respData.code,
-        message: "Ops! Something went wrong. Please try again.",
+        message: respData.message || "Ops! Something went wrong. Please try again.",
       },
     };
   }
 
-  if (respData?.error || !respData?.status) {
+  if (respData?.errors || !respData?.status) {
     return {
       data: {
         ...respData,
@@ -160,12 +160,17 @@ export async function joinedCompetitionAction(_: any, formData: FormData) {
     redirect("/login");
   }
 
-  if (respData?.error || !respData?.status) {
+  if (respData?.errors.length > 0 && respData?.errors[0].hasJoined) {
+    const id = respData.errors[0].competeId;
+    redirect(`/features/competequiz/${id}`);
+  }
+
+  if (respData?.errors || !respData?.status) {
     return {
       data: {
         ...respData,
         code: respData.code,
-        message: "Failed to Join Competition.",
+        message: respData.message || "Failed to Join Competition.",
       },
     };
   }
@@ -194,7 +199,7 @@ export async function submitCompetitionAction(_: any, formData: FormData) {
       data: {
         ...respData,
         code: respData.code,
-        message: "Ops! Something went wrong. Please try again.",
+        message: respData.message || "Ops! Something went wrong. Please try again.",
       },
     };
   }
@@ -205,7 +210,7 @@ export async function submitCompetitionAction(_: any, formData: FormData) {
     redirect("/login");
   }
 
-  if (respData?.error || !respData?.status) {
+  if (respData?.errors || !respData?.status) {
     return {
       data: {
         ...respData,

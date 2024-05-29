@@ -30,7 +30,7 @@ export async function createQuizAction(_: any, formData: FormData) {
     redirect("/login");
   }
 
-  if (respData?.error || !respData?.status) {
+  if (respData?.errors || !respData?.status) {
     return {
       data: {
         ...respData,
@@ -73,7 +73,7 @@ export async function submitQuizAction(_: any, formData: FormData) {
     redirect("/login");
   }
 
-  if (respData?.error || !respData?.status) {
+  if (respData?.errors || !respData?.status) {
     return {
       data: {
         ...respData,
@@ -85,7 +85,6 @@ export async function submitQuizAction(_: any, formData: FormData) {
 
   revalidateTag("userData");
   revalidateTag("usersQuiz");
-  // revalidateTag("quiz");
 
   return {
     data: {
