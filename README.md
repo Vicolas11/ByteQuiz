@@ -1,7 +1,7 @@
 ## About ByteQuiz
 Is a responsibe web-based platform that gamifies core computer programming concepts, such as variables, data types, loops, and conditional statements, in the form of quizzes. It was built using the following technologies: Frontend: Nextjs 14, React, Tailwindcss, Typescript and Backend: Express, Typescript, Mongodb (Production), MySQL (Development), Prisma.
 
-This web application aims to leverage the power of gamification to create a more engaging and effective learning experience for computer programming education. By incorporating game mechanics, fostering a sense of accomplishment, and providing personalized feedback, the proposed platform has the potential to empower individuals of all ages and backgrounds to learn and master the fundamentals of computer programming.
+This web application aims to leverage the power of gamification to create a more engaging and effective learning experience for computer programming education. By incorporating game mechanics, fostering a sense of accomplishment, and providing personalized feedback, the proposed platform has the potential to empower individuals of all ages and backgrounds to learn and master the fundamentals of computer programming. [`Live Preview`](https://bytequiz.vercel.app/).
 
 ## Getting Started
 1. Git clone the project
