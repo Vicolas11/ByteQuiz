@@ -4,19 +4,19 @@ Is a responsibe web-based platform that gamifies core computer programming conce
 This web application aims to leverage the power of gamification to create a more engaging and effective learning experience for computer programming education. By incorporating game mechanics, fostering a sense of accomplishment, and providing personalized feedback, the proposed platform has the potential to empower individuals of all ages and backgrounds to learn and master the fundamentals of computer programming.
 
 ## Getting Started
-```
 1. Git clone the project
-2. Change the directory to the project folder <strong>cd ByteQuizFrontend</strong>
-3. Run <strong>yarn install</strong> or <strong>npm install</strong> to install modules
-4. Create a .env file in your root folder.
+2. Change the directory to the project folder `cd ByteQuizFrontend`
+3. Run `yarn install` or `npm install` to install modules
+4. Create a .env file in your work directory or folder.
 5. Copy everything in .env.example file to the .env file
 6. Replace the necessary values
-7. Run <strong>yarn dev</strong> or <strong>npm run dev</strong> to start server
-```
+7. Run `yarn dev` or `npm run dev` to start server
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Test Login Details
 You can use these accounts to login for test purpose or better still register to get an account for yourself:
+
 username: `vicolas@bytequiz.com`
 Password: `123456`
 or
