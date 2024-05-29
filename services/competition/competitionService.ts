@@ -1,4 +1,3 @@
-import { fetchWithTimeoutAndRetry } from "@/utils/fetchWithRetry.util";
 import { constant } from "@/configs/constant.config";
 import { envConfig } from "@/configs/env.config";
 import { verifyToken } from "@/utils/jwt.util";
@@ -20,7 +19,7 @@ export async function createCompetitionService(userData: any) {
   }
 
   try {
-    const response = await fetchWithTimeoutAndRetry(url, {
+    const response = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -52,7 +51,7 @@ export async function deleteCompetitionService(id: string) {
   }
 
   try {
-    const response = await fetchWithTimeoutAndRetry(url, {
+    const response = await fetch(url, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -83,7 +82,7 @@ export async function joinedCompetitionService(id: string) {
   }
 
   try {
-    const response = await fetchWithTimeoutAndRetry(url, {
+    const response = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -119,7 +118,7 @@ export async function updateCompetitionService(userData: any) {
   }
 
   try {
-    const response = await fetchWithTimeoutAndRetry(url, {
+    const response = await fetch(url, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -152,7 +151,7 @@ export async function submitCompetitionService(userData: any) {
   }
 
   try {
-    const response = await fetchWithTimeoutAndRetry(url, {
+    const response = await fetch(url, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

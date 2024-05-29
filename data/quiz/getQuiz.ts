@@ -1,4 +1,4 @@
-import { fetchWithTimeoutAndRetry } from "@/utils/fetchWithRetry.util";
+
 import { QuizResp } from "@/interfaces/response.interface";
 import { constant } from "@/configs/constant.config";
 import { verifyToken } from "../../utils/jwt.util";
@@ -18,7 +18,7 @@ export const getAQuiz = async (id: string) => {
   }
 
   try {
-    const response = await fetchWithTimeoutAndRetry(`${baseURL}/api/quiz/${id}`, {
+    const response = await fetch(`${baseURL}/api/quiz/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

@@ -1,4 +1,3 @@
-import { fetchWithTimeoutAndRetry } from "@/utils/fetchWithRetry.util";
 import { QueryParams } from "@/interfaces/others.interface";
 import { constant } from "@/configs/constant.config";
 import { verifyToken } from "../../utils/jwt.util";
@@ -32,7 +31,7 @@ export const getAllCompetitions = async (data: QueryParams) => {
   }
 
   try {
-    const response = await fetchWithTimeoutAndRetry(`${baseURL}/${queryString}`, {
+    const response = await fetch(`${baseURL}/${queryString}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -79,7 +78,7 @@ export const getACompetition = async (id: string) => {
   }
 
   try {
-    const response = await fetchWithTimeoutAndRetry(`${baseURL}/api/competitions/${id}`, {
+    const response = await fetch(`${baseURL}/api/competitions/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

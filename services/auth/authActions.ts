@@ -43,7 +43,7 @@ export async function registerUserAction(_: any, formData: FormData) {
     };
   }
 
-  if (responseData?.error || !responseData?.status) {
+  if (responseData?.errors || !responseData?.status) {
     return {
       data: {
         status: false,

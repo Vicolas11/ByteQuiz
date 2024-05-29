@@ -1,4 +1,4 @@
-import { fetchWithTimeoutAndRetry } from "@/utils/fetchWithRetry.util";
+
 import { GetStatsResp } from "@/interfaces/response.interface";
 import { constant } from "@/configs/constant.config";
 import { envConfig } from "@/configs/env.config";
@@ -9,7 +9,7 @@ const baseURL = dev ? devURL : prodURL;
 
 export const getStats = async () => {
   try {
-    const response = await fetchWithTimeoutAndRetry(
+    const response = await fetch(
       `${baseURL}/api/auth/stats`,
       {
         method: "GET",

@@ -1,4 +1,3 @@
-import { fetchWithTimeoutAndRetry } from "@/utils/fetchWithRetry.util";
 import { constant } from "@/configs/constant.config";
 import { envConfig } from "@/configs/env.config";
 import { verifyToken } from "@/utils/jwt.util";
@@ -19,7 +18,7 @@ export async function createQuizService(userData: any) {
   }
 
   try {
-    const response = await fetchWithTimeoutAndRetry(url, {
+    const response = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -52,7 +51,7 @@ export async function submitQuizService(userData: any) {
   }
 
   try {
-    const response = await fetchWithTimeoutAndRetry(url, {
+    const response = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

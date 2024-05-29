@@ -1,4 +1,3 @@
-import { fetchWithTimeoutAndRetry } from "@/utils/fetchWithRetry.util";
 import { LeaderboardResp } from "@/interfaces/response.interface";
 import { QueryParams } from "@/interfaces/others.interface";
 import { constant } from "@/configs/constant.config";
@@ -29,7 +28,7 @@ export const getLeaderboard = async (id: string, data: QueryParams) => {
   }
 
   try {
-    const response = await fetchWithTimeoutAndRetry(
+    const response = await fetch(
       `${baseURL}/${queryString}`,
       {
         method: "GET",
