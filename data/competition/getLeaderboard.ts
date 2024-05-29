@@ -1,3 +1,4 @@
+import { fetchWithTimeoutAndRetry } from "@/utils/fetchWithRetry.util";
 import { LeaderboardResp } from "@/interfaces/response.interface";
 import { QueryParams } from "@/interfaces/others.interface";
 import { constant } from "@/configs/constant.config";
@@ -28,14 +29,17 @@ export const getLeaderboard = async (id: string, data: QueryParams) => {
   }
 
   try {
-    const response = await fetch(`${baseURL}/${queryString}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${authToken}`,
-      },
-      next: { revalidate: 60, tags: ["leaderboard"] },
-    });
+    const response = await fetchWithTimeoutAndRetry(
+      `${baseURL}/${queryString}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${authToken}`,
+        },
+        next: { revalidate: 60, tags: ["leaderboard"] },
+      }
+    );
 
     const data = await response.json();
 

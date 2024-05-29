@@ -1,3 +1,4 @@
+import { fetchWithTimeoutAndRetry } from "@/utils/fetchWithRetry.util";
 import { GetQuizResp } from "@/interfaces/response.interface";
 import { QueryParams } from "@/interfaces/others.interface";
 import { constant } from "@/configs/constant.config";
@@ -28,7 +29,7 @@ export const getAllUserQuiz = async (data: QueryParams) => {
   }
 
   try {
-    const response = await fetch(`${baseURL}/${queryString}`, {
+    const response = await fetchWithTimeoutAndRetry(`${baseURL}/${queryString}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

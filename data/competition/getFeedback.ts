@@ -1,3 +1,4 @@
+import { fetchWithTimeoutAndRetry } from "@/utils/fetchWithRetry.util";
 import { QuestionResp } from "@/interfaces/response.interface";
 import { constant } from "@/configs/constant.config";
 import { verifyToken } from "../../utils/jwt.util";
@@ -18,7 +19,7 @@ export const getFeedback = async (id: string) => {
   }
 
   try {
-    const response = await fetch(`${baseURL}/${queryString}`, {
+    const response = await fetchWithTimeoutAndRetry(`${baseURL}/${queryString}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

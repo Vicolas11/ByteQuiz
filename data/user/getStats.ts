@@ -1,3 +1,4 @@
+import { fetchWithTimeoutAndRetry } from "@/utils/fetchWithRetry.util";
 import { GetStatsResp } from "@/interfaces/response.interface";
 import { constant } from "@/configs/constant.config";
 import { envConfig } from "@/configs/env.config";
@@ -8,13 +9,16 @@ const baseURL = dev ? devURL : prodURL;
 
 export const getStats = async () => {
   try {
-    const response = await fetch(`${baseURL}/api/auth/stats`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      next: { revalidate: 60, tags: ["stats"] },
-    });
+    const response = await fetchWithTimeoutAndRetry(
+      `${baseURL}/api/auth/stats`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        next: { revalidate: 60, tags: ["stats"] },
+      }
+    );
     const data = await response.json();
     if (data.error) return { status: false, data: null, error: data.error };
 

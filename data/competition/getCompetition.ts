@@ -1,11 +1,12 @@
-import {
-  AllCompetitionsResp,
-  CompetitionResp,
-} from "@/interfaces/response.interface";
+import { fetchWithTimeoutAndRetry } from "@/utils/fetchWithRetry.util";
 import { QueryParams } from "@/interfaces/others.interface";
 import { constant } from "@/configs/constant.config";
 import { verifyToken } from "../../utils/jwt.util";
 import { envConfig } from "@/configs/env.config";
+import {
+  AllCompetitionsResp,
+  CompetitionResp,
+} from "@/interfaces/response.interface";
 import { cookies } from "next/headers";
 
 const { prodURL, devURL } = constant;
@@ -31,7 +32,7 @@ export const getAllCompetitions = async (data: QueryParams) => {
   }
 
   try {
-    const response = await fetch(`${baseURL}/${queryString}`, {
+    const response = await fetchWithTimeoutAndRetry(`${baseURL}/${queryString}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -78,7 +79,7 @@ export const getACompetition = async (id: string) => {
   }
 
   try {
-    const response = await fetch(`${baseURL}/api/competitions/${id}`, {
+    const response = await fetchWithTimeoutAndRetry(`${baseURL}/api/competitions/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

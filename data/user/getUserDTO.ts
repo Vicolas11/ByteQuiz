@@ -1,3 +1,4 @@
+import { fetchWithTimeoutAndRetry } from "@/utils/fetchWithRetry.util";
 import { UserProfile } from "@/interfaces/userData.interface";
 import { constant } from "@/configs/constant.config";
 import { verifyToken } from "../../utils/jwt.util";
@@ -20,7 +21,7 @@ export const getUserDTO = async () => {
   const user = await getUser();
 
   try {
-    const response = await fetch(`${baseURL}/api/auth/me`, {
+    const response = await fetchWithTimeoutAndRetry(`${baseURL}/api/auth/me`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

@@ -1,5 +1,4 @@
 import { getACompetition } from "@/data/competition/getCompetition";
-import { CustomInput } from "@/components/common/CustomInput";
 import { getFeedback } from "@/data/competition/getFeedback";
 import { Params } from "@/interfaces/props.interface";
 import styles from "./feedbackdetail.module.scss";

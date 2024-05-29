@@ -1,5 +1,5 @@
 export async function fetchWithTimeoutAndRetry(
-  url: URL,
+  url: URL | string,
   options: RequestInit = {},
   timeout: number = 4900,
   retries: number = 3

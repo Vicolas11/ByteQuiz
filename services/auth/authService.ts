@@ -1,3 +1,4 @@
+import { fetchWithTimeoutAndRetry } from "@/utils/fetchWithRetry.util";
 import { constant } from "@/configs/constant.config";
 import { envConfig } from "@/configs/env.config";
 import { verifyToken } from "@/utils/jwt.util";
@@ -9,7 +10,6 @@ import {
   RegisterUserParams,
   ResetPasswordParams,
 } from "@/interfaces/action.interface";
-import { fetchWithTimeoutAndRetry } from "@/utils/fetchWithRetry.util";
 
 const { prodURL, devURL } = constant;
 const { dev } = envConfig;
@@ -24,7 +24,7 @@ export async function registerUserService(userData: RegisterUserParams) {
   }
 
   try {
-    const response = await fetch(url, {
+    const response = await fetchWithTimeoutAndRetry(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -81,7 +81,7 @@ export async function logoutUserService() {
   const url = new URL("api/auth/logout", baseURL);
 
   try {
-    const response = await fetch(url, {
+    const response = await fetchWithTimeoutAndRetry(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -114,7 +114,7 @@ export async function changePasswordService(userData: ChangePasswordParams) {
   }
 
   try {
-    const response = await fetch(url, {
+    const response = await fetchWithTimeoutAndRetry(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -145,7 +145,7 @@ export async function forgetPasswordService(userData: ForgetPasswordParams) {
   }
 
   try {
-    const response = await fetch(url, {
+    const response = await fetchWithTimeoutAndRetry(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -177,7 +177,7 @@ export async function resendForgetPasswordService(
   }
 
   try {
-    const response = await fetch(url, {
+    const response = await fetchWithTimeoutAndRetry(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -207,7 +207,7 @@ export async function resetPasswordService(userData: ResetPasswordParams) {
   }
 
   try {
-    const response = await fetch(url, {
+    const response = await fetchWithTimeoutAndRetry(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -239,7 +239,7 @@ export async function updateUserService(userData: any) {
   }
 
   try {
-    const response = await fetch(url, {
+    const response = await fetchWithTimeoutAndRetry(url, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
