@@ -9,6 +9,7 @@ import {
   RegisterUserParams,
   ResetPasswordParams,
 } from "@/interfaces/action.interface";
+import { fetchWithTimeoutAndRetry } from "@/utils/fetchWithRetry.util";
 
 const { prodURL, devURL } = constant;
 const { dev } = envConfig;
@@ -33,11 +34,11 @@ export async function registerUserService(userData: RegisterUserParams) {
     });
 
     return response.json();
-  } catch (error) {
+  } catch (error: any) {
     return {
       data: {
         status: false,
-        message: "Registration Service Error",
+        message: error.message || "Registration Service Error",
       },
     };
   }
@@ -52,7 +53,7 @@ export async function loginUserService(userData: LoginUserParams) {
   }
 
   try {
-    const response = await fetch(url, {
+    const response = await fetchWithTimeoutAndRetry(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -63,10 +64,11 @@ export async function loginUserService(userData: LoginUserParams) {
 
     return response.json();
   } catch (error: any) {
+    console.log("Login Service Error => ", error);
     return {
       data: {
         status: false,
-        message: "Login Service Error",
+        message: error.message || "Login Service Error",
       },
     };
   }
@@ -89,12 +91,12 @@ export async function logoutUserService() {
     });
 
     return response.json();
-  } catch (error) {
+  } catch (error: any) {
     console.error("Logout Service Error:", error);
     return {
       data: {
         status: false,
-        message: "Logout Service Error",
+        message: error.message || "Logout Service Error",
       },
     };
   }
@@ -123,12 +125,12 @@ export async function changePasswordService(userData: ChangePasswordParams) {
     });
 
     return response.json();
-  } catch (error) {
+  } catch (error: any) {
     console.error("Change Password Service Error:", error);
     return {
       data: {
         status: false,
-        message: "Change password Service Error",
+        message: error.message || "Change password Service Error",
       },
     };
   }
